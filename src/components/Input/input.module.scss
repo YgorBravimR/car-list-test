@@ -1,0 +1,65 @@
+@mixin autofill-styles {
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+    -webkit-text-fill-color: var(--primary-color) !important;
+  }
+}
+
+@mixin container-styles($isFocused, $isFilled, $isErrored) {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 8px;
+  width: 100%;
+  border: 2px solid var(--secondary-color);
+  
+  display: flex;
+  align-items: center;
+
+  & + div {
+    margin-top: 8px;
+  }
+
+  @if $isErrored {
+    border-color: red;
+  }
+
+  @if $isFocused {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+
+  @if $isFilled {
+    color: var(--primary-color);
+  }
+
+  input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--main-text-color);
+    outline: none;
+
+    &::placeholder {
+      color: #666360;
+    }
+
+    @include autofill-styles;
+  }
+}
+
+.container {
+  @include container-styles(false, false, false);
+}
+
+.isFocused {
+  @include container-styles(true, false, false);
+}
+
+.isFilled {
+  @include container-styles(false, true, false);
+}
+
+.isErrored {
+  @include container-styles(false, false, true);
+}
+
