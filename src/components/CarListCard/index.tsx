@@ -1,9 +1,9 @@
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
-import { FiCalendar } from 'react-icons/fi'
-import { TbCurrencyReal } from 'react-icons/tb'
-import styles from './styles.module.scss'
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import { FiCalendar } from 'react-icons/fi';
+import { TbCurrencyReal } from 'react-icons/tb';
 import Button from '../Button';
-import Image from 'next/image';
+import styles from './styles.module.scss';
+import { useRouter } from 'next/router';
 
 interface CarListCardProps {
   carId: number;
@@ -11,11 +11,14 @@ interface CarListCardProps {
   brand: string;
   model: string;
   year: number;
-  price: string;
+  price: number;
   isFavorite?: boolean;
+  clickFavoriteIcon: Function
 }
 
-export function CarListCard({ carId, imagePath, brand, model, year, price, isFavorite }: CarListCardProps) {
+export function CarListCard({ carId, imagePath, brand, model, year, price, isFavorite, clickFavoriteIcon }: CarListCardProps) {
+  const router = useRouter()
+
   return (
     <div className={styles.cardContainer}>
       <img className={styles.carImage} src={imagePath} alt={brand} />
@@ -30,11 +33,11 @@ export function CarListCard({ carId, imagePath, brand, model, year, price, isFav
           <p>{price}</p>
         </div>
         <div className={styles.buttons}>
-          <Button >
-            Ver mais
+          <Button onClick={() => router.push(`/car-details/${carId}`)}>
+            Ver detalhes
           </Button>
           {
-            isFavorite ? <AiFillStar className={styles.starIconActive} /> : <AiOutlineStar className={styles.starIcon} />
+            isFavorite ? <AiFillStar className={styles.starIconActive} onClick={() => clickFavoriteIcon(carId)} /> : <AiOutlineStar className={styles.starIcon} onClick={() => clickFavoriteIcon(carId)} />
           }
         </div>
       </div>

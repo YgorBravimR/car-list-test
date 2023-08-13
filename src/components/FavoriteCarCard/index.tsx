@@ -1,6 +1,5 @@
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
-import { FiCalendar } from 'react-icons/fi'
-import { TbCurrencyReal } from 'react-icons/tb'
+import { FiCalendar } from 'react-icons/fi';
+import { TbCurrencyReal } from 'react-icons/tb';
 import styles from "./styles.module.scss";
 
 interface FavoriteCardProps {
@@ -9,7 +8,7 @@ interface FavoriteCardProps {
   brand: string;
   model: string;
   year: number;
-  price: string;
+  price: number;
   isFavorite?: boolean;
 }
 

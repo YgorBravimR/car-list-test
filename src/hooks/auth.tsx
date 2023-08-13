@@ -1,13 +1,12 @@
+import { useRouter } from "next/router";
 import React, {
   createContext,
   useCallback,
-  useState,
   useContext,
   useEffect,
+  useState,
 } from 'react';
-import { useRouter } from "next/router";
 
-import { User } from '../models/user';
 
 interface AuthProviderProps {
   children: React.ReactNode;
@@ -94,4 +93,4 @@ function useAuth(): AuthContextData {
   return context;
 }
 
-export { useAuth, AuthProvider };
+export { AuthProvider, useAuth };
