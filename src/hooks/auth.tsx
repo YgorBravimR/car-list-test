@@ -42,7 +42,10 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
       if (login) {
         setData({ login });
 
-        router.push('/home');
+        if (router.pathname === '/') {
+          router.push('/home');
+        }
+
       } else {
         router.push('/');
       }
@@ -64,9 +67,8 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
   );
 
   const signOut = useCallback(() => {
-    localStorage.removeItem('@FinancesChurch:token');
-    localStorage.removeItem('@FinancesChurch:user');
-    router.back();
+    localStorage.removeItem('@ListCar:login');
+    router.push('/');
   }, []);
 
   return (

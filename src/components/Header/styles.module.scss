@@ -1,0 +1,54 @@
+.headerContainer {
+  height: 5rem;
+  background-color: var(--tertiary-color);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  height: 4rem;
+  object-fit: contain;
+}
+
+.leftSection{
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.navbarContainer{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.signOutButton{
+  cursor: pointer;
+  height: 3.5rem;
+  width: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.navbarTabContent{
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--primary-color-low-opacity);
+  }
+}

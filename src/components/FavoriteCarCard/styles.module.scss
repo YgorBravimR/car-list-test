@@ -1,0 +1,41 @@
+.favoriteCardContainer{
+  background-color: var(--light-gray);
+  padding: 2rem;
+  gap: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  margin: auto;
+  border-radius: var(--border-radius);
+  margin-bottom: 2rem;
+}
+
+.carImage {
+  width: 50%;
+  border-radius: var(--border-radius);
+  aspect-ratio: 1/0.5;
+}
+
+.cardDetailsContainer {
+  width: 50%;
+}
+
+.carName {
+  display: flex;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.carInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 24px;
+
+  svg {
+    color: var(--tertiary-color);
+  }
+}
+

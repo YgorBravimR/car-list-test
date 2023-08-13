@@ -3,6 +3,7 @@ import { FiCalendar } from 'react-icons/fi'
 import { TbCurrencyReal } from 'react-icons/tb'
 import styles from './styles.module.scss'
 import Button from '../Button';
+import Image from 'next/image';
 
 interface CarListCardProps {
   carId: number;
