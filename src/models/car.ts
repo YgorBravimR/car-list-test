@@ -10,7 +10,7 @@ export interface ICarType {
   brand: string;
   model: string;
   year: number;
-  isFavorite: boolean;
   price: number;
+  description: string;
   details: ICarDetails[];
 }

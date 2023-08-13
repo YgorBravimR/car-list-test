@@ -31,6 +31,7 @@ const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
   const [data, setData] = useState<AuthState>(() => ({} as AuthState));
+  const [isLoading, setIsLoading] = useState(true);
 
   const router = useRouter()
 
@@ -48,6 +49,8 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
       } else {
         router.push('/');
       }
+
+      setIsLoading(false);
     };
 
     checkAuthentication();
@@ -67,8 +70,13 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const signOut = useCallback(() => {
     localStorage.removeItem('@ListCar:login');
+    setData({ login: "" });
     router.push('/');
   }, []);
+
+  if (isLoading) {
+    return <></>;
+  }
 
   return (
     <AuthContext.Provider

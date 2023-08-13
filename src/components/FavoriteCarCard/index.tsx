@@ -1,6 +1,7 @@
 import { FiCalendar } from 'react-icons/fi';
 import { TbCurrencyReal } from 'react-icons/tb';
 import styles from "./styles.module.scss";
+import { useFavorites } from '@/hooks/favorites';
 
 interface FavoriteCardProps {
   carId: number;
@@ -9,25 +10,28 @@ interface FavoriteCardProps {
   model: string;
   year: number;
   price: number;
-  isFavorite?: boolean;
 }
 
-export function FavoriteCarCard({ carId, imagePath, brand, model, year, price, isFavorite }: FavoriteCardProps) {
+export function FavoriteCarCard({ carId, imagePath, brand, model, year, price }: FavoriteCardProps) {
+  const { updateFavoriteCars } = useFavorites();
+
   return (
     <div className={styles.favoriteCardContainer}>
       <img className={styles.carImage} src={imagePath} alt="" />
       <div className={styles.cardDetailsContainer}>
         <p className={styles.carName}>{brand} {model}</p>
-        <div className={styles.carInfo}>
-          <FiCalendar />
-          <p>{year}</p>
+        <div>
+          <div className={styles.carInfo}>
+            <FiCalendar />
+            <p>{year}</p>
+          </div>
+          <div className={styles.carInfo}>
+            <TbCurrencyReal />
+            <p>{price}</p>
+          </div>
         </div>
-        <div className={styles.carInfo}>
-          <TbCurrencyReal />
-          <p>{price}</p>
-        </div>
-        <button>
-          Remover favoritos
+        <button className={styles.removeFavoritesButton} onClick={() => updateFavoriteCars(carId)}>
+          Remover favorito
         </button>
       </div>
     </div>

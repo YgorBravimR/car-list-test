@@ -9,10 +9,6 @@ interface DefaultLayoutProps {
 export default function DefaultLayout({ children }: DefaultLayoutProps): ReactNode {
   return (
     <div>
-      <Head>
-        <title>My App</title>
-        <link rel="stylesheet" href="/static/css/style.css" />
-      </Head>
       <Header />
       {children}
     </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { AuthProvider } from './auth';
+import { FavoritesProvider } from './favorites';
 
 interface AppProviderProps {
   children: React.ReactNode;
@@ -8,7 +9,9 @@ interface AppProviderProps {
 
 const AppProvider = ({ children }: AppProviderProps) => (
   <AuthProvider>
-    {children}
+    <FavoritesProvider>
+      {children}
+    </FavoritesProvider>
   </AuthProvider>
 );
 

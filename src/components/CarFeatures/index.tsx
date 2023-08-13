@@ -8,10 +8,17 @@ interface CarListCardProps {
 
 export function CarFeatures({ car }: CarListCardProps) {
   return (
-    <div className={styles.container}>
-      {car.details.map((detail) =>
-        <Feature detail={detail}></Feature>)
-      }
-    </div>
+    <div className={styles.container}	>
+      <p>
+        {car.description}
+      </p>
+      <div className={styles.detailsCardContainer}>
+        {
+          car.details.map((detail) =>
+            <Feature detail={detail} />
+          )
+        }
+      </div>
+    </div >
   )
 }
