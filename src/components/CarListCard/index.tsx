@@ -13,7 +13,7 @@ interface CarListCardProps {
   year: number;
   price: number;
   isFavorite?: boolean;
-  clickFavoriteIcon: Function
+  clickFavoriteIcon: (carId: number) => void
 }
 
 export function CarListCard({ carId, imagePath, brand, model, year, price, isFavorite, clickFavoriteIcon }: CarListCardProps) {
