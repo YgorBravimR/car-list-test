@@ -19,7 +19,7 @@ export default function Page() {
   const [loading, setLoading] = useState(false);
   const formRef = useRef<FormHandles>(null);
 
-  const { signIn } = useAuth();
+  const { signIn, login } = useAuth();
 
   const router = useRouter()
 
@@ -66,6 +66,10 @@ export default function Page() {
     },
     [signIn, router, setLoading],
   );
+
+  if (login) {
+    return <></>
+  }
 
   return (
     <div className={styles.container}>

@@ -72,7 +72,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
     localStorage.removeItem('@ListCar:login');
     setData({ login: "" });
     router.push('/');
-  }, []);
+  }, [router]);
 
   if (isLoading) {
     return <></>;
