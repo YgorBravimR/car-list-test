@@ -57,7 +57,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
   }, []);
 
   const signIn = useCallback(
-    async ({ login, password }: SignInCredentials): Promise<string> => {
+    async ({ login }: SignInCredentials): Promise<string> => {
 
       localStorage.setItem('@ListCar:login', login);
 

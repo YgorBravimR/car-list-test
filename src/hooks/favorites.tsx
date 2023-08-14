@@ -4,7 +4,7 @@ interface AuthProviderProps {
   children: React.ReactNode;
 }
 
-interface FavoritesContextData {
+export interface FavoritesContextData {
   favoriteCarsIds: number[];
   setFavoriteCarsIds: React.Dispatch<React.SetStateAction<number[]>>;
   updateFavoriteCars: (carId: number) => void;
