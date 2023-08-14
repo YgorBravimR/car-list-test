@@ -1,10 +1,8 @@
+import { BiColorFill } from 'react-icons/bi';
+import { GiCarSeat, GiCartwheel, GiThreeLeaves } from 'react-icons/gi';
 import { LuFuel } from 'react-icons/lu';
 import { PiEngine } from 'react-icons/pi';
 import { TbCurrencyReal, TbManualGearbox } from 'react-icons/tb';
-import { BiColorFill } from 'react-icons/bi';
-import { GiCartwheel } from 'react-icons/gi';
-import { GiCarSeat } from 'react-icons/gi';
-import { GiThreeLeaves } from 'react-icons/gi';
 import styles from './styles.module.scss';
 
 interface CarListCardProps {

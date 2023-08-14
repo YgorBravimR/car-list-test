@@ -1,9 +1,9 @@
-import { useRouter } from 'next/router';
-import styles from './styles.module.scss';
-import { CARS_MOCK_DATA } from "@/utils/carsData";
 import { CarFeatures } from '@/components/CarFeatures';
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { useFavorites } from '@/hooks/favorites';
+import { CARS_MOCK_DATA } from "@/utils/carsData";
+import { useRouter } from 'next/router';
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import styles from './styles.module.scss';
 
 export default function CarDetails() {
   const { favoriteCarsIds, updateFavoriteCars } = useFavorites();
@@ -15,18 +15,20 @@ export default function CarDetails() {
     <div className={styles.container}>
       {carDetail && (
         <>
-          {
-            isFavorite ? <AiFillStar className={styles.starIconActive} onClick={() => updateFavoriteCars(carDetail.carId)} /> : <AiOutlineStar className={styles.starIcon} onClick={() => updateFavoriteCars(carDetail.carId)} />
-          }
           <p>
             {carDetail.brand} {carDetail.model} {carDetail.year}
           </p>
-          <img
-            src={carDetail.imagePath}
-            alt={carDetail.brand}
-            width={500}
-            height={500}
-          />
+          <div className={styles.imageContainer}>
+            <img
+              src={carDetail.imagePath}
+              alt={carDetail.brand}
+              width={500}
+              height={500}
+            />
+            {
+              isFavorite ? <AiFillStar className={styles.starIconActive} onClick={() => updateFavoriteCars(carDetail.carId)} /> : <AiOutlineStar className={styles.starIcon} onClick={() => updateFavoriteCars(carDetail.carId)} />
+            }
+          </div>
           <CarFeatures car={carDetail} />
         </>
       )}

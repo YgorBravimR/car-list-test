@@ -1,22 +1,42 @@
+@import '../../styles/variables.scss';
+
 .headerContainer {
   height: 5rem;
   background-color: var(--tertiary-color);
   padding-left: 2rem;
   padding-right: 2rem;
+
+  @media screen and (max-width: $small-screen) {
+    height: 3rem;
+  }
+}
+
+.headerContent {
+  margin: auto;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
 }
 
 .logo{
   height: 4rem;
   object-fit: contain;
+
+  @media screen and (max-width: $small-screen) {
+    height: 2rem;
+  }
 }
 
 .leftSection{
   display: flex;
   align-items: center;
   gap: 5rem;
+
+  @media screen and (max-width: $small-screen) {
+    gap: 1rem;
+  }
 }
 
 .navbarContainer{
@@ -27,7 +47,7 @@
 
 .signOutButton{
   cursor: pointer;
-  height: 3.5rem;
+  height: 2rem;
   width: 2rem;
   background: none;
   border: none;
@@ -37,11 +57,14 @@
     height: 100%;
     width: 100%;
   }
+
+  @media screen and (max-width: $small-screen) {
+    height: 1.5rem;
+  }
 }
 
-.navbarTabContent{
+.navbarTab, .navbarTabActive{
   padding: 0.5rem 1rem;
-  border-radius: 20px;
   transition: all 0.2s ease-in-out;
   background: none;
   border: none;
@@ -50,5 +73,15 @@
 
   &:hover {
     background-color: var(--primary-color-low-opacity);
+    border-radius: 20px;
   }
+
+  @media screen and (max-width: $small-screen) {
+    font-size: 0.8rem
+  }
+}
+
+
+.navbarTabActive {
+  border-bottom: 2px solid var(--secondary-color);
 }

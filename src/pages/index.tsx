@@ -1,16 +1,14 @@
-import styles from './home.module.scss'
-import { useCallback, useRef, useState } from 'react';
-import * as Yup from 'yup';
-import { Form } from '@unform/web';
-import { FormHandles } from '@unform/core';
-import { FaSpinner } from 'react-icons/fa';
-
-import { useAuth } from '../hooks/auth';
-
-import Input from '../components/Input';
-import Button from '../components/Button';
-import { useRouter } from 'next/router';
 import getValidationErrors from '@/utils/getValidationErrors';
+import { FormHandles } from '@unform/core';
+import { Form } from '@unform/web';
+import { useRouter } from 'next/router';
+import { useCallback, useRef, useState } from 'react';
+import { FaSpinner } from 'react-icons/fa';
+import * as Yup from 'yup';
+import Button from '../components/Button';
+import Input from '../components/Input';
+import { useAuth } from '../hooks/auth';
+import styles from './home.module.scss';
 
 interface SignInFormData {
   login: string;

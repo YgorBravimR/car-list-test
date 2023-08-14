@@ -1,7 +1,121 @@
-.carCardsContainer {
+@import '../../styles/variables.scss';
+
+.container {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 1136px;
+  margin: auto;
+
+  @media screen and (max-width: $large-screen) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: $small-screen) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.carCardsContainer {  padding: 1rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   row-gap: 4rem;
+  max-width: 1136px;
+  margin: auto;
+
+  @media screen and (max-width: $large-screen) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: $small-screen) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.filterSection{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2rem;
+
+  @media screen and (max-width: $medium-screen) {
+    align-items: flex-end;
+  }
+
+  @media screen and (max-width: $small-screen) {
+    align-items: center;
+    margin: auto;
+  }
+}
+
+.filterInputsContainer{
+  display: flex;
+
+  label {
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.15rem;
+  }
+
+  input {
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    border : 1px solid var(--primary-color);
+    width: 8rem;
+
+    &:focus-visible {
+      border: 1px solid var(--tertiary-color);
+      outline: none;
+    }
+  }
+
+  @media screen and (max-width: $medium-screen) {
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    label {
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width: $small-screen) {
+    flex-direction: column;
+      gap: 0.5rem;
+
+    label {
+      flex-direction: row;
+
+      span {
+        width: 5rem;
+        text-align: right;
+      }
+    }
+  }
+}
+
+.filterButtonsContainer{
+  display: flex;
+  gap: 0.5rem;
+
+  svg {
+    color: var(--primary-color);
+    cursor: pointer;
+    height: 1.75rem;
+    width: 1.75rem;
+    padding: 4px;
+    border-radius: 100%;
+
+    &:hover {
+      background-color: var(--tertiary-color-low-opacity);
+    }
+  }
+
+  @media screen and (max-width: $small-screen) {
+    flex-direction: column;
+  }
 }

@@ -1,9 +1,9 @@
+import { useRouter } from 'next/router';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { FiCalendar } from 'react-icons/fi';
 import { TbCurrencyReal } from 'react-icons/tb';
 import Button from '../Button';
 import styles from './styles.module.scss';
-import { useRouter } from 'next/router';
 
 interface CarListCardProps {
   carId: number;

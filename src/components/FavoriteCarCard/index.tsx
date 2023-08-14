@@ -1,7 +1,7 @@
+import { useFavorites } from '@/hooks/favorites';
 import { FiCalendar } from 'react-icons/fi';
 import { TbCurrencyReal } from 'react-icons/tb';
 import styles from "./styles.module.scss";
-import { useFavorites } from '@/hooks/favorites';
 
 interface FavoriteCardProps {
   carId: number;

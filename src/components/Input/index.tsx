@@ -1,15 +1,9 @@
-import React, {
-  InputHTMLAttributes,
-  useRef,
-  useEffect,
-  useState,
-  useCallback,
-} from 'react';
 import { useField } from '@unform/core';
+import React, { InputHTMLAttributes, useCallback, useEffect, useRef, useState, } from 'react';
 import { IconBaseProps } from 'react-icons';
 import { FiAlertCircle } from 'react-icons/fi';
 
-import styles from './input.module.scss';
+import styles from './styles.module.scss';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
@@ -42,7 +36,7 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
 
   return (
     <div className={`${styles.container} ${isFocused ? styles.isFocused : ''} ${isFilled ? styles.isFilled : ''} ${error ? styles.isErrored : ''}`}>
-      
+
       <input
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
@@ -52,7 +46,7 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
       />
 
       {error && (
-        <FiAlertCircle color="#c53030" size={16}/>
+        <FiAlertCircle color="#c53030" size={16} />
       )}
     </div>
   );
