@@ -5,10 +5,10 @@ import { useRouter } from 'next/router';
 import { useCallback, useRef, useState } from 'react';
 import { FaSpinner } from 'react-icons/fa';
 import * as Yup from 'yup';
-import Button from '../components/Button';
-import Input from '../components/Input';
 import { useAuth } from '../hooks/auth';
 import styles from './home.module.scss';
+import { Button } from '@/components/Button';
+import { Input } from '@/components/Input';
 
 interface SignInFormData {
   login: string;

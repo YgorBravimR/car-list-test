@@ -107,7 +107,7 @@ export const CARS_MOCK_DATA: ICarType[] = [
   },
   {
     carId: 3,
-    imagePath: '/images/bmwm5.jpeg',
+    imagePath: '/images/focus.jpg',
     brand: 'Ford',
     model: 'Focus',
     year: 2022,
@@ -159,7 +159,7 @@ export const CARS_MOCK_DATA: ICarType[] = [
   },
   {
     carId: 4,
-    imagePath: '/images/audi.jpeg',
+    imagePath: '/images/audi.png',
     brand: 'Audi',
     model: 'A3',
     year: 2023,
@@ -211,7 +211,7 @@ export const CARS_MOCK_DATA: ICarType[] = [
   },
   {
     carId: 5,
-    imagePath: '/images/camaro.jpg',
+    imagePath: '/images/altima.jpg',
     brand: 'Nissan',
     model: 'Altima',
     year: 2022,
@@ -263,7 +263,7 @@ export const CARS_MOCK_DATA: ICarType[] = [
   },
   {
     carId: 6,
-    imagePath: '/images/fusion.jpeg',
+    imagePath: '/images/bmw.jpeg',
     brand: 'BMW',
     model: 'Série 3',
     year: 2023,
@@ -315,7 +315,7 @@ export const CARS_MOCK_DATA: ICarType[] = [
   },
   {
     carId: 7,
-    imagePath: '/images/mercedes.jpeg',
+    imagePath: '/images/golf.jpg',
     brand: 'Volkswagen',
     model: 'Golf',
     year: 2022,
@@ -367,7 +367,7 @@ export const CARS_MOCK_DATA: ICarType[] = [
   },
   {
     carId: 8,
-    imagePath: '/images/mustang.jpg',
+    imagePath: '/images/mazda.jpg',
     brand: 'Mazda',
     model: '6',
     year: 2023,
@@ -419,8 +419,8 @@ export const CARS_MOCK_DATA: ICarType[] = [
   },
   {
     carId: 9,
-    imagePath: '/images/nissangtr.jpeg',
-    brand: 'Mercedes-Benz',
+    imagePath: '/images/mercedes.jpeg',
+    brand: 'Mercedes',
     model: 'Classe C',
     year: 2022,
     price: 185000,
@@ -471,7 +471,7 @@ export const CARS_MOCK_DATA: ICarType[] = [
   },
   {
     carId: 10,
-    imagePath: '/images/x6.jpg',
+    imagePath: '/images/cruze.jpg',
     brand: 'Chevrolet',
     model: 'Cruze',
     year: 2023,

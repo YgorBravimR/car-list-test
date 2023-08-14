@@ -15,7 +15,7 @@ export default function Favorites() {
         ?
         <>
           <BsCarFrontFill />
-          <p>Você ainda não possui nenhum carro favorito, dê uma estrela ao seus favoritos e a lista aparecerá aqui</p>
+          <p>Você ainda não possui nenhum carro favorito, dê uma estrela ao seus favoritos e a lista aparecerá aqui.</p>
         </>
         :
         favoritesToShow.map((car) =>

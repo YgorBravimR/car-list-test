@@ -6,12 +6,12 @@ interface AppProviderProps {
   children: React.ReactNode;
 }
 
-const AppProvider = ({ children }: AppProviderProps) => (
-  <AuthProvider>
-    <FavoritesProvider>
-      {children}
-    </FavoritesProvider>
-  </AuthProvider>
-);
-
-export default AppProvider;
+export default function AppProvider({ children }: AppProviderProps) {
+  return (
+    <AuthProvider>
+      <FavoritesProvider>
+        {children}
+      </FavoritesProvider>
+    </AuthProvider>
+  )
+}

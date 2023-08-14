@@ -14,8 +14,8 @@ export function CarFeatures({ car }: CarListCardProps) {
       </p>
       <div className={styles.detailsCardContainer}>
         {
-          car.details.map((detail) =>
-            <Feature detail={detail} />
+          car.details.map((detail, index) =>
+            <Feature detail={detail} key={index} />
           )
         }
       </div>

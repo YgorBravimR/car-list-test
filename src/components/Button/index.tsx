@@ -3,10 +3,11 @@ import styles from './styles.module.scss';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button: React.FC<ButtonProps> = ({ children, ...rest }) => (
-  <button className={styles.container} type="button" {...rest}>
-    {children}
-  </button>
-);
+export function Button({ children, ...rest }: ButtonProps) {
+  return (
+    <button className={styles.container} type="button" {...rest}>
+      {children}
+    </button>
+  )
+}
 
-export default Button;

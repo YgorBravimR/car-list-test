@@ -49,15 +49,17 @@ export function Header() {
         <div className={styles.leftSection}>
           <img className={styles.logo} src={carLogo.src} alt="logo" />
           <div className={styles.navbarContainer}>
-            {tabs.map((tab, index) => (
-              <NavbarTab
-                key={index}
-                name={tab.name}
-                path={tab.path}
-                isActive={tab.path === activeTab}
-                onClickTab={() => setActiveTab(tab.path)}
-              />
-            ))}
+            {
+              tabs.map((tab, index) => (
+                <NavbarTab
+                  key={index}
+                  name={tab.name}
+                  path={tab.path}
+                  isActive={tab.path === activeTab}
+                  onClickTab={() => setActiveTab(tab.path)}
+                />
+              ))
+            }
           </div>
         </div>
         <button className={styles.signOutButton} onClick={handleSignOut} >
